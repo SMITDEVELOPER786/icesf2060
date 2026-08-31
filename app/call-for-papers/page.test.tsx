@@ -37,12 +37,12 @@ describe("Call for Papers page", () => {
       expect(screen.getByText(item)).toBeInTheDocument();
     }
 
-    expect(site.links.template).toBeNull();
+    expect(site.links.template).toBe(
+      "https://www.ieee.org/conferences/publishing/templates.html",
+    );
     expect(
-      screen.getByText(
-        "The IEEE paper template will be posted here when available.",
-      ),
-    ).toBeInTheDocument();
+      screen.getByRole("link", { name: "IEEE paper template" }),
+    ).toHaveAttribute("href", site.links.template);
 
     expect(
       screen.getByRole("table", { name: "Important dates" }),

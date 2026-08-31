@@ -28,21 +28,32 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-header-inner">
         <div className="brand">
-          <p className="brand-org">{site.conference.organizer}</p>
-          <p className="brand-aff">{site.conference.affiliationLine}</p>
-          <Link href="/" className="brand-short">
-            {site.conference.shortName}
+          <Link href="/" className="brand-home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="brand-logo"
+              src="/media/dsu-logo.png"
+              alt=""
+            />
+            <span className="brand-short">{site.conference.shortName}</span>
           </Link>
+          <div className="brand-lines">
+            <p className="brand-org">{site.conference.organizer}</p>
+            <p className="brand-aff">{site.conference.affiliationLine}</p>
+          </div>
         </div>
         <button
           ref={buttonRef}
           type="button"
-          className="menu-btn"
+          className={open ? "menu-btn is-open" : "menu-btn"}
+          aria-label="Menu"
           aria-expanded={open}
           aria-controls="site-menu"
           onClick={() => setOpen((value) => !value)}
         >
-          Menu
+          <span className="menu-bar" aria-hidden="true" />
+          <span className="menu-bar" aria-hidden="true" />
+          <span className="menu-bar" aria-hidden="true" />
         </button>
         <nav
           id="site-menu"
@@ -63,7 +74,7 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        <CtaLink className="cta" href={site.links.easychair}>
+        <CtaLink className="cta header-cta" href={site.links.easychair} compact>
           Submit paper
         </CtaLink>
       </div>

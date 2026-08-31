@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/PageHero";
 import { PersonGrid } from "@/components/PersonGrid";
+import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/content/site";
 import { COMMITTEE_SECTIONS, groupPeople } from "@/lib/site";
 
@@ -11,19 +12,22 @@ export default function CommitteePage() {
   return (
     <>
       <PageHero kicker={site.conference.shortName} title="Committee" />
-      {site.people.length === 0 ? (
-        <p className="empty">Committee members to be announced.</p>
-      ) : (
-        COMMITTEE_SECTIONS.map((section) => (
-          <section key={section.id}>
-            <h2>{section.heading}</h2>
-            <PersonGrid
-              people={grouped[section.id]}
-              emptyLabel="To be announced"
-            />
-          </section>
-        ))
-      )}
+      <div className="page-body">
+        {site.people.length === 0 ? (
+          <p className="empty">Committee members to be announced.</p>
+        ) : (
+          COMMITTEE_SECTIONS.map((section) => {
+            const people = grouped[section.id];
+            if (people.length === 0) return null;
+            return (
+              <section key={section.id}>
+                <SectionHeading>{section.heading}</SectionHeading>
+                <PersonGrid people={people} emptyLabel="To be announced" />
+              </section>
+            );
+          })
+        )}
+      </div>
     </>
   );
 }

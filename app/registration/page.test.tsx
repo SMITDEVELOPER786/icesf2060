@@ -19,8 +19,8 @@ describe("Registration page", () => {
 
     for (const fee of site.registrationFees) {
       expect(screen.getByText(fee.category)).toBeInTheDocument();
+      expect(screen.getByText(fee.amount)).toBeInTheDocument();
     }
-    expect(screen.getAllByText("To be announced").length).toBeGreaterThan(0);
 
     expect(
       screen.getByRole("button", { name: "Register — link to be announced" }),

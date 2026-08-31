@@ -1,22 +1,28 @@
-import type { Metadata } from "next";
-import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const sans = IBM_Plex_Sans({
+const sans = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   variable: "--font-sans-loaded",
+  display: "swap",
 });
 
-const serif = Source_Serif_4({
+const serif = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
   variable: "--font-serif-loaded",
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: {

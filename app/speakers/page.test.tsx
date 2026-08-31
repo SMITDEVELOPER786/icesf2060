@@ -9,8 +9,8 @@ describe("Speakers page", () => {
     expect(pageModule.metadata).toEqual({ title: "Speakers" });
   });
 
-  it("renders PageHero and the keynote empty label", () => {
-    expect(site.speakers).toHaveLength(0);
+  it("renders PageHero and keynote speakers from site content", () => {
+    expect(site.speakers.length).toBeGreaterThan(0);
     render(<SpeakersPage />);
 
     expect(screen.getByText(site.conference.shortName)).toHaveClass("kicker");
@@ -21,7 +21,10 @@ describe("Speakers page", () => {
       screen.getByRole("heading", { level: 2, name: "Keynote speakers" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Keynote speakers to be announced."),
-    ).toHaveClass("empty");
+      screen.getByRole("heading", { name: site.speakers[0].name }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText("Keynote speakers to be announced."),
+    ).toBeNull();
   });
 });

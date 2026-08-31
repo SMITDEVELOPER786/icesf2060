@@ -13,6 +13,13 @@ export type ImportantDate = {
   date: string;
 };
 
+export type ProgrammeItem = {
+  id: string;
+  day: string;
+  time: string;
+  title: string;
+};
+
 export type Track = {
   id: string;
   title: string;
@@ -25,6 +32,7 @@ export type Person = {
   role: string;
   section: CommitteeSection;
   affiliation?: string;
+  photoSrc?: string | null;
 };
 
 export type Speaker = {
@@ -33,6 +41,7 @@ export type Speaker = {
   affiliation: string;
   bio: string;
   photoSrc: string | null;
+  talkTitle?: string;
 };
 
 export type RegistrationFee = {
@@ -50,10 +59,13 @@ export type SiteContent = {
     venue: string;
     city: string;
     announcement: string | null;
+    motto: string;
     about: string[];
     guidelines: string[];
   };
   importantDates: ImportantDate[];
+  programme: ProgrammeItem[];
+  faculties: Track[];
   tracks: Track[];
   people: Person[];
   speakers: Speaker[];

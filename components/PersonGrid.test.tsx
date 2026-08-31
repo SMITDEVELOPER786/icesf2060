@@ -33,6 +33,7 @@ describe("PersonGrid", () => {
     expect(screen.getByText("Conference Chair")).toBeInTheDocument();
     expect(screen.getByText("DHA Suffa University")).toBeInTheDocument();
     expect(screen.queryByRole("img")).toBeNull();
+    expect(screen.getByText("EC")).toHaveClass("person-ph");
   });
 
   it("renders a speaker photo when photoSrc is set", () => {

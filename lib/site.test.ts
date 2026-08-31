@@ -4,6 +4,7 @@ import {
   groupPeople,
   hasAnnouncement,
   pageTitle,
+  personInitials,
 } from "./site";
 import type { CommitteeSection } from "@/content/types";
 
@@ -65,5 +66,12 @@ describe("conferenceDatesLabel", () => {
         { id: "conference", label: "Conference", date: "9–10 December 2026" },
       ]),
     ).toBe("9–10 December 2026");
+  });
+});
+
+describe("personInitials", () => {
+  it("uses first and last significant words", () => {
+    expect(personInitials("Prof. Dr. Ahmed Saeed Minhas")).toBe("AM");
+    expect(personInitials("Department of Civil Engineering")).toBe("CE");
   });
 });

@@ -9,8 +9,7 @@ describe("Contact page", () => {
     expect(pageModule.metadata).toEqual({ title: "Contact" });
   });
 
-  it("renders address lines and a mailto email, omitting empty phone and maps", () => {
-    expect(site.contact.phone).toBe("");
+  it("renders address lines, email, phone, and no maps", () => {
     render(<ContactPage />);
 
     expect(screen.getByText(site.conference.shortName)).toHaveClass("kicker");
@@ -27,7 +26,12 @@ describe("Contact page", () => {
     const email = screen.getByRole("link", { name: site.contact.email });
     expect(email).toHaveAttribute("href", `mailto:${site.contact.email}`);
 
-    expect(screen.queryByText(/phone/i)).toBeNull();
+    const phone = screen.getByRole("link", { name: site.contact.phone });
+    expect(phone).toHaveAttribute(
+      "href",
+      `tel:${site.contact.phone.replace(/\s/g, "")}`,
+    );
+
     expect(document.querySelector("iframe")).toBeNull();
     expect(document.querySelector("map")).toBeNull();
   });

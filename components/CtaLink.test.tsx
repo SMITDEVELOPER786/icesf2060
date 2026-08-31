@@ -13,6 +13,20 @@ describe("CtaLink", () => {
     expect(screen.queryByRole("link")).toBeNull();
   });
 
+  it("renders a compact disabled control when compact is set", () => {
+    render(
+      <CtaLink href={null} compact>
+        Submit paper
+      </CtaLink>,
+    );
+    expect(
+      screen.getByRole("button", {
+        name: "Submit paper — link to be announced",
+      }),
+    ).toBeDisabled();
+    expect(screen.queryByText("link to be announced")).toBeNull();
+  });
+
   it("renders an outbound link when href is set", () => {
     render(
       <CtaLink href="https://easychair.org/example">Submit abstract</CtaLink>,

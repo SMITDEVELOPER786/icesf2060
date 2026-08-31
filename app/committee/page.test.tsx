@@ -3,7 +3,6 @@ import { describe, expect, it } from "vitest";
 import * as pageModule from "./page";
 import CommitteePage from "./page";
 import { site } from "@/content/site";
-import { COMMITTEE_SECTIONS } from "@/lib/site";
 
 describe("Committee page", () => {
   it("exports metadata title Committee", () => {
@@ -18,20 +17,18 @@ describe("Committee page", () => {
     ).toBeInTheDocument();
   });
 
-  it("shows a single announcement when people are empty and invents no names", () => {
-    expect(site.people).toHaveLength(0);
+  it("renders committee sections and people from site content", () => {
+    expect(site.people.length).toBeGreaterThan(0);
     render(<CommitteePage />);
 
     expect(
-      screen.getAllByText("Committee members to be announced."),
-    ).toHaveLength(1);
+      screen.queryByText("Committee members to be announced."),
+    ).toBeNull();
 
-    for (const section of COMMITTEE_SECTIONS) {
+    for (const person of site.people) {
       expect(
-        screen.queryByRole("heading", { level: 2, name: section.heading }),
-      ).toBeNull();
+        screen.getByRole("heading", { name: person.name }),
+      ).toBeInTheDocument();
     }
-
-    expect(screen.queryByRole("list")).toBeNull();
   });
 });

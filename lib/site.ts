@@ -46,3 +46,32 @@ export function conferenceDatesLabel(
 ): string | undefined {
   return dates.find((row) => row.id === "conference")?.date;
 }
+
+const INITIALS_SKIP = new Set([
+  "prof",
+  "dr",
+  "engr",
+  "mr",
+  "ms",
+  "mrs",
+  "of",
+  "and",
+  "the",
+  "for",
+  "department",
+  "center",
+  "office",
+]);
+
+export function personInitials(name: string): string {
+  const words = name
+    .replace(/[.&]/g, " ")
+    .split(/\s+/)
+    .filter((word) => {
+      const clean = word.replace(/\./g, "").toLowerCase();
+      return clean.length > 0 && !INITIALS_SKIP.has(clean);
+    });
+  if (words.length === 0) return "DSU";
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return `${words[0][0]}${words[words.length - 1][0]}`.toUpperCase();
+}
