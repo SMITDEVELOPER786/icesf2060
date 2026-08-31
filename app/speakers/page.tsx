@@ -8,10 +8,13 @@ export default function SpeakersPage() {
   return (
     <>
       <PageHero kicker={site.conference.shortName} title="Speakers" />
-      <PersonGrid
-        people={site.speakers}
-        emptyLabel="Keynote speakers to be announced."
-      />
+      <section>
+        <h2>Keynote speakers</h2>
+        <PersonGrid
+          people={site.speakers}
+          emptyLabel="Keynote speakers to be announced."
+        />
+      </section>
     </>
   );
 }

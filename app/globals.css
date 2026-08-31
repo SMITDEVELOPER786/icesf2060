@@ -40,7 +40,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--navy);
   outline-offset: 2px;
 }
 
@@ -76,6 +76,12 @@ main {
   z-index: 20;
   background: var(--navy);
   color: var(--cream);
+}
+
+.site-header :focus-visible,
+.site-footer :focus-visible,
+.plate :focus-visible {
+  outline-color: var(--gold);
 }
 
 .site-header-inner {
@@ -197,13 +203,6 @@ main {
   gap: 1.5rem;
   align-items: stretch;
   margin-bottom: 2.5rem;
-}
-
-.hero .kicker {
-  border-bottom: 1px solid var(--gold);
-  display: inline-block;
-  padding-bottom: 0.35rem;
-  margin-bottom: 0.85rem;
 }
 
 .hero hr {

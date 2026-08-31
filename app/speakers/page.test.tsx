@@ -18,6 +18,9 @@ describe("Speakers page", () => {
       screen.getByRole("heading", { level: 1, name: "Speakers" }),
     ).toBeInTheDocument();
     expect(
+      screen.getByRole("heading", { level: 2, name: "Keynote speakers" }),
+    ).toBeInTheDocument();
+    expect(
       screen.getByText("Keynote speakers to be announced."),
     ).toHaveClass("empty");
   });

@@ -8,7 +8,7 @@ export function CtaLink({ href, children, className }: CtaLinkProps) {
   if (!href) {
     return (
       <button type="button" className={className} disabled>
-        Link to be announced
+        {children} — link to be announced
       </button>
     );
   }

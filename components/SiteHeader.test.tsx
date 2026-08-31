@@ -28,7 +28,9 @@ describe("SiteHeader", () => {
       screen.getByRole("link", { name: "Call for Papers" }),
     ).toHaveAttribute("href", "/call-for-papers");
     expect(
-      screen.getByRole("button", { name: /link to be announced/i }),
+      screen.getByRole("button", {
+        name: "Submit paper — link to be announced",
+      }),
     ).toBeDisabled();
   });
 

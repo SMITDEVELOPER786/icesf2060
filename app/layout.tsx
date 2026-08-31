@@ -38,10 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${sans.variable} ${serif.variable}`}>
-        <AnnouncementBar text={site.conference.announcement} />
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+      <body>
         <SiteHeader />
+        <AnnouncementBar text={site.conference.announcement} />
         <main>{children}</main>
         <SiteFooter />
       </body>

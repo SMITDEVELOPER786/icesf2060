@@ -7,6 +7,7 @@ import { site } from "@/content/site";
 import { conferenceDatesLabel } from "@/lib/site";
 
 export default function Home() {
+  const dates = conferenceDatesLabel(site.importantDates);
   return (
     <>
       <EventJsonLd />
@@ -18,7 +19,7 @@ export default function Home() {
           <p>{site.conference.affiliationLine}</p>
         </div>
         <div className="plate">
-          <p className="kicker">{conferenceDatesLabel(site.importantDates)}</p>
+          {dates ? <p className="kicker">{dates}</p> : null}
           <p>{site.conference.venue}</p>
           <p>{site.conference.city}</p>
         </div>

@@ -10,7 +10,10 @@ export default function CallForPapersPage() {
   return (
     <>
       <PageHero kicker={site.conference.shortName} title="Call for Papers" />
-      <TrackList tracks={site.tracks} />
+      <section>
+        <h2>Tracks</h2>
+        <TrackList tracks={site.tracks} />
+      </section>
       <section>
         <h2>Guidelines</h2>
         <ul>

@@ -23,7 +23,7 @@ describe("Registration page", () => {
     expect(screen.getAllByText("To be announced").length).toBeGreaterThan(0);
 
     expect(
-      screen.getByRole("button", { name: /link to be announced/i }),
+      screen.getByRole("button", { name: "Register — link to be announced" }),
     ).toBeDisabled();
     expect(screen.queryByRole("link", { name: "Register" })).toBeNull();
   });

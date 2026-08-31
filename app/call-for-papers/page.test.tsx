@@ -20,6 +20,10 @@ describe("Call for Papers page", () => {
   it("lists tracks, guidelines, IEEE template note, dates, and submit CTA", () => {
     render(<CallForPapersPage />);
 
+    expect(
+      screen.getByRole("heading", { level: 2, name: "Tracks" }),
+    ).toBeInTheDocument();
+
     for (const track of site.tracks) {
       expect(
         screen.getByRole("heading", { name: track.title }),
@@ -45,7 +49,9 @@ describe("Call for Papers page", () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole("button", { name: /link to be announced/i }),
+      screen.getByRole("button", {
+        name: "Submit abstract — link to be announced",
+      }),
     ).toBeDisabled();
     expect(screen.queryByRole("link", { name: "Submit abstract" })).toBeNull();
   });

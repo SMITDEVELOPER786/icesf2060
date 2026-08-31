@@ -74,10 +74,14 @@ describe("Home", () => {
 
   it("renders Submit abstract and Register CTAs", () => {
     render(<Home />);
-    const announced = screen.getAllByRole("button", {
-      name: /link to be announced/i,
-    });
-    expect(announced).toHaveLength(2);
+    expect(
+      screen.getByRole("button", {
+        name: "Submit abstract — link to be announced",
+      }),
+    ).toBeDisabled();
+    expect(
+      screen.getByRole("button", { name: "Register — link to be announced" }),
+    ).toBeDisabled();
     expect(screen.queryByRole("link", { name: "Submit abstract" })).toBeNull();
     expect(screen.queryByRole("link", { name: "Register" })).toBeNull();
   });

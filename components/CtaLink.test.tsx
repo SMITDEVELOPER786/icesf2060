@@ -6,7 +6,9 @@ describe("CtaLink", () => {
   it("renders a disabled control when href is null", () => {
     render(<CtaLink href={null}>Submit abstract</CtaLink>);
     expect(
-      screen.getByRole("button", { name: /link to be announced/i }),
+      screen.getByRole("button", {
+        name: "Submit abstract — link to be announced",
+      }),
     ).toBeDisabled();
     expect(screen.queryByRole("link")).toBeNull();
   });
