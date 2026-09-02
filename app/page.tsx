@@ -6,8 +6,7 @@ import { EventJsonLd } from "@/components/EventJsonLd";
 import { HeroCollage } from "@/components/HeroCollage";
 import { PersonGrid } from "@/components/PersonGrid";
 import { SectionHeading } from "@/components/SectionHeading";
-import { StatsBar } from "@/components/StatsBar";
-import { TrackList } from "@/components/TrackList";
+import { ThemeCards } from "@/components/ThemeCards";
 import { site } from "@/content/site";
 import { conferenceDatesLabel } from "@/lib/site";
 
@@ -23,97 +22,68 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-panel">
-            <div className="logo-strip">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="hero-crest"
-                src="/media/dsu-logo.png"
-                alt=""
-              />
-              <p>{site.conference.organizer}</p>
-              <span className="logo-dot" aria-hidden="true" />
-              <p>{site.conference.affiliationLine}</p>
-            </div>
-            <p className="hero-motto">{site.conference.motto}</p>
-            <p className="kicker">International conference</p>
-            <p className="hero-short">{site.conference.shortName}</p>
-            <hr />
+            <p className="kicker">Get Ready</p>
             <h1>{site.conference.fullTitle}</h1>
+            <p className="hero-tagline">{site.conference.subtitle}</p>
             <div className="hero-meta">
               {dates ? <p className="hero-dates">{dates}</p> : null}
-              <p className="hero-chip">{site.conference.city}</p>
               <p className="hero-venue">Venue: {site.conference.venue}</p>
             </div>
             <div className="cta-pair">
-              <CtaLink className="cta" href={site.links.easychair}>
+              <CtaLink className="cta" href={site.links.easychair} compact>
                 Submit a Paper
               </CtaLink>
-              <Link className="cta cta-outline" href="/call-for-papers">
+              <Link className="cta cta-light" href="/call-for-papers">
                 Learn More
               </Link>
             </div>
           </div>
         </div>
       </section>
-      <StatsBar />
-      <section className="band">
+      <section className="band about-band">
         <div className="page-body">
-          <SectionHeading>Theme of Conference</SectionHeading>
-          <div className="about-split">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="about-photo"
-              src="/media/dsu-dck.png"
-              alt="DHA Suffa University DCK Campus"
-            />
-            <div>
-              <p className="lede">{site.conference.about[0]}</p>
-              {site.conference.about.slice(1).map((paragraph) => (
-                <p key={paragraph} className="lede-follow">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+          <SectionHeading>About Us</SectionHeading>
+          <div className="copy-stack">
+            {site.conference.about.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
-          <TrackList tracks={site.tracks} />
-          <p className="band-link">
-            <Link href="/call-for-papers">Call for Papers</Link>
-          </p>
         </div>
       </section>
       <section className="band band-alt">
         <div className="page-body">
-          <SectionHeading>Host University</SectionHeading>
-          <p className="lede">
-            DHA Suffa University, Karachi — Main Campus in DHA Phase VII (Ext.),
-            with a second campus at DHA City Karachi (DCK).
-          </p>
-          <div className="campus-gallery" aria-hidden="true">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/media/dsu-campus.png" alt="" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/media/dsu-dck.png" alt="" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/media/dsu-career.png" alt="" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/media/dsu-sports.png" alt="" />
+          <SectionHeading>Conference Aims and Objectives</SectionHeading>
+          <div className="copy-stack">
+            <p>{site.conference.aims.intro}</p>
+            <p className="aims-lead">{site.conference.aims.leadIn}</p>
+            <ul className="aims-list">
+              {site.conference.aims.objectives.map((objective) => (
+                <li key={objective}>{objective}</li>
+              ))}
+            </ul>
           </div>
-          <TrackList tracks={site.faculties} />
         </div>
       </section>
-      <section className="band">
+      <section className="band theme-band">
+        <div className="page-body">
+          <SectionHeading>Theme of Conference</SectionHeading>
+          <p className="theme-intro">{site.conference.themeIntro}</p>
+          <ThemeCards themes={site.themes} />
+        </div>
+      </section>
+      <section className="band band-alt">
         <div className="page-body">
           <SectionHeading>Important Dates</SectionHeading>
           <DateCards dates={site.importantDates} />
         </div>
       </section>
-      <section className="band band-alt">
+      <section className="band">
         <div className="page-body">
           <SectionHeading>Agenda Highlights</SectionHeading>
           <AgendaTimeline items={site.programme} />
         </div>
       </section>
-      <section className="band">
+      <section className="band band-alt">
         <div className="page-body">
           <SectionHeading>Keynote Speaker</SectionHeading>
           <PersonGrid
@@ -125,7 +95,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="band band-alt">
+      <section className="band">
         <div className="page-body">
           <SectionHeading>Committee</SectionHeading>
           <PersonGrid
@@ -133,7 +103,7 @@ export default function Home() {
             emptyLabel="Committee members to be announced."
           />
           <p className="band-link">
-            <Link href="/committee">Full committee</Link>
+            {/* <Link href="/committee">Full committee</Link> */}
           </p>
         </div>
       </section>

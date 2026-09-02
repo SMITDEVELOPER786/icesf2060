@@ -1,12 +1,12 @@
-# ICESF-2026 conference website
+# ISRC-STM 2026 conference website
 
 Date: 2026-08-31  
-Status: approved (short name confirmed as ICESF-2026)  
+Status: approved (short name confirmed as ISRC-STM 2026)  
 Stack: Next.js (App Router) + React + TypeScript, static-friendly, deploy on Vercel
 
 ## Goal
 
-Official public website for **ICESF-2026**: *International Conference on Engineering a Sustainable Future: Technology, Management, Human Values and Global Perspectives in the ESG Era*.
+Official public website for **ISRC-STM 2026**: *International Conference on Engineering a Sustainable Future: Technology, Management, Human Values and Global Perspectives in the ESG Era*.
 
 Organized by **DHA Suffa University**, Karachi. Header and footer display **DHA Suffa University branding** and the **IEEE affiliation line**, using official logo assets when supplied. Do not create or imply an IEEE organizational unit that has not been provided (no IEEE Karachi Section, Computer Society, Photonics, or similar unless added in `content/site.ts`).
 
@@ -18,7 +18,7 @@ v1 stays small: no CMS, login, backend, or payment.
 
 ## Edition vs calendar dates
 
-Confirmed: short name **ICESF-2026**. Conference and all deadlines are in **2026**. Do not use 2027 anywhere in branding or copy.
+Confirmed: short name **ISRC-STM 2026**. Conference and all deadlines are in **2026**. Do not use 2027 anywhere in branding or copy.
 
 ## Conference facts (v1 content)
 
@@ -26,10 +26,10 @@ All of the following live in `content/site.ts` so copy can change without layout
 
 | Field | Value |
 | --- | --- |
-| Short name | ICESF-2026 |
+| Short name | ISRC-STM 2026 |
 | Full title | International Conference on Engineering a Sustainable Future: Technology, Management, Human Values and Global Perspectives in the ESG Era |
-| Organizer | DHA Suffa University |
-| Affiliation line | Technically co-sponsored by IEEE |
+| Organizer | DHA Suffa University 
+| Affiliation line 
 | Venue | DHA Suffa University, Karachi (in-person) |
 | Conference dates | 9–10 December 2026 |
 | Abstract submission | 30 September 2026 |
@@ -77,8 +77,8 @@ links: {
 }
 
 seo: {
-  titleTemplate: string // e.g. "%s | ICESF-2026"
-  defaultTitle: string // ICESF-2026 | International Conference on Engineering a Sustainable Future
+  titleTemplate: string // e.g. "%s | ISRC-STM 2026"
+  defaultTitle: string // ISRC-STM 2026 | International Conference on Engineering a Sustainable Future
   description: string
   ogImage: string | null
 }
@@ -93,7 +93,7 @@ Empty arrays and null links are valid. Do not invent people, fees, URLs, or IEEE
 - **Gold** `#C4A574` — thin rules, small-caps labels, hover underline; never large fills
 - **White** — content panels on cream
 - **Type:** Source Serif 4 for titles; IBM Plex Sans for body, nav, tables
-- **Hero:** split masthead — left stacked full title; right solid date/venue plate. Gold rule under **ICESF-2026**. No photography collage, no abstract blobs.
+- **Hero:** split masthead — left stacked full title; right solid date/venue plate. Gold rule under **ISRC-STM 2026**. No photography collage, no abstract blobs.
 - **Dates:** two-column typographic table (label \| date), not icon cards
 - **Cards** (tracks, speakers only): 1px navy border, square-ish radius (max 4px), no drop shadows
 - **Motion:** nav underline only
@@ -151,7 +151,7 @@ Address lines, email, and phone from `contact`. No map embed in v1.
 
 ## Components
 
-- `SiteHeader` — DHA Suffa University branding and IEEE affiliation line (official logos when supplied; otherwise typeset names, not invented marks). ICESF-2026, nav, Submit paper CTA, accessible mobile menu
+- `SiteHeader` — DHA Suffa University branding and IEEE affiliation line (official logos when supplied; otherwise typeset names, not invented marks). ISRC-STM 2026, nav, Submit paper CTA, accessible mobile menu
 - `AnnouncementBar` — renders only when announcement text is set
 - `SiteFooter` — short title, dates, organizer + IEEE affiliation line, copyright year from conference dates (2026)
 - `PageHero` — inner-page title + one-line context
@@ -172,8 +172,8 @@ Layout wraps every page with header + footer. Content is imported from `content/
 
 ## SEO
 
-- Default document title: `ICESF-2026 | International Conference on Engineering a Sustainable Future`
-- Per-page titles via template: `{Page} | ICESF-2026` (Home uses the default title)
+- Default document title: `ISRC-STM 2026 | International Conference on Engineering a Sustainable Future`
+- Per-page titles via template: `{Page} | ISRC-STM 2026` (Home uses the default title)
 - Meta description from `seo.description` (full conference name, dates, venue)
 - Open Graph: title, description, `og:type=website`, optional `seo.ogImage` (omit image tag when null)
 - Favicon (simple navy/cream mark from short name; replace when official asset exists)

@@ -18,7 +18,7 @@ export function SiteFooter() {
           <p className="footer-brand">{site.conference.shortName}</p>
           {dates ? <p>{dates}</p> : null}
           <p>
-            Organized by {site.conference.organizer} |{" "}
+            Organized by {site.conference.organizer} 
             {site.conference.affiliationLine}
           </p>
         </div>

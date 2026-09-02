@@ -54,6 +54,7 @@ export type SiteContent = {
   conference: {
     shortName: string;
     fullTitle: string;
+    subtitle: string;
     organizer: string;
     affiliationLine: string;
     venue: string;
@@ -61,12 +62,19 @@ export type SiteContent = {
     announcement: string | null;
     motto: string;
     about: string[];
+    aims: {
+      intro: string;
+      leadIn: string;
+      objectives: string[];
+    };
+    themeIntro: string;
     guidelines: string[];
   };
   importantDates: ImportantDate[];
   programme: ProgrammeItem[];
   faculties: Track[];
   tracks: Track[];
+  themes: Track[];
   people: Person[];
   speakers: Speaker[];
   registrationFees: RegistrationFee[];

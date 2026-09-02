@@ -8,9 +8,10 @@ describe("HeroCollage", () => {
     const collage = container.querySelector(".hero-collage");
     expect(collage).toHaveAttribute("aria-hidden", "true");
     const images = container.querySelectorAll("img");
-    expect(images).toHaveLength(3);
+    expect(images).toHaveLength(4);
     expect(images[0]).toHaveAttribute("src", "/media/dsu-campus.png");
     expect(images[1]).toHaveAttribute("src", "/media/dsu-dck.png");
-    expect(images[2]).toHaveAttribute("src", "/media/dsu-career.png");
+    expect(images[2]).toHaveAttribute("src", "/media/dsu-career.jpg");
+    expect(images[3]).toHaveAttribute("src", "/media/dsu-sports.jpg");
   });
 });

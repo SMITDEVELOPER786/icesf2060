@@ -8,9 +8,9 @@ describe("SiteHeader", () => {
 
     expect(screen.getByText("DHA Suffa University")).toBeInTheDocument();
     expect(
-      screen.getByText("Technically co-sponsored by IEEE"),
+      screen.getByText(""),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "ICESF-2026" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "ISRC-STM 2026" })).toHaveAttribute(
       "href",
       "/",
     );

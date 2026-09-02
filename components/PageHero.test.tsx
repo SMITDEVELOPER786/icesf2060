@@ -6,13 +6,13 @@ describe("PageHero", () => {
   it("renders kicker, title, and optional lede", () => {
     render(
       <PageHero
-        kicker="ICESF-2026"
+        kicker="ISRC-STM 2026"
         title="Call for Papers"
         lede="Original work across four tracks."
       />,
     );
 
-    expect(screen.getByText("ICESF-2026")).toHaveClass("kicker");
+    expect(screen.getByText("ISRC-STM 2026")).toHaveClass("kicker");
     expect(
       screen.getByRole("heading", { level: 1, name: "Call for Papers" }),
     ).toBeInTheDocument();
@@ -22,7 +22,7 @@ describe("PageHero", () => {
   it("uses the kicker prop instead of a hardcoded short name", () => {
     render(<PageHero kicker="CONF-TEST" title="Committee" />);
     expect(screen.getByText("CONF-TEST")).toBeInTheDocument();
-    expect(screen.queryByText("ICESF-2026")).toBeNull();
+    expect(screen.queryByText("ISRC-STM 2026")).toBeNull();
     expect(screen.queryByText("Original work across four tracks.")).toBeNull();
   });
 });

@@ -27,18 +27,18 @@ describe("pageTitle", () => {
     expect(
       pageTitle(
         null,
-        "ICESF-2026 | International Conference on Engineering a Sustainable Future",
-        "%s | ICESF-2026",
+        "ISRC-STM 2026 | International Conference on Engineering a Sustainable Future",
+        "%s | ISRC-STM 2026",
       ),
     ).toBe(
-      "ICESF-2026 | International Conference on Engineering a Sustainable Future",
+      "ISRC-STM 2026 | International Conference on Engineering a Sustainable Future",
     );
   });
 
   it("applies the template for inner pages", () => {
     expect(
-      pageTitle("Call for Papers", "DEFAULT", "%s | ICESF-2026"),
-    ).toBe("Call for Papers | ICESF-2026");
+      pageTitle("Call for Papers", "DEFAULT", "%s | ISRC-STM 2026"),
+    ).toBe("Call for Papers | ISRC-STM 2026");
   });
 });
 

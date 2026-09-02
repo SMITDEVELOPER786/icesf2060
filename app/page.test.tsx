@@ -10,28 +10,22 @@ describe("Home", () => {
     expect(homeModule).not.toHaveProperty("metadata");
   });
 
-  it("renders one h1 with the full conference title", () => {
+  it("renders one h1 with the full conference title and subtitle", () => {
     render(<Home />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
     expect(headings[0]).toHaveTextContent(site.conference.fullTitle);
+    expect(screen.getByText(site.conference.subtitle)).toBeInTheDocument();
   });
 
   it("renders a full-bleed cinematic hero with dates and venue", () => {
     const { container } = render(<Home />);
     const hero = container.querySelector("section.hero");
     expect(hero).not.toBeNull();
-    expect(hero!.querySelector(".kicker")).toHaveTextContent(
-      "International conference",
-    );
-    expect(hero!.querySelector("hr")).not.toBeNull();
+    expect(hero!.querySelector(".kicker")).toHaveTextContent("Get Ready");
+    expect(hero!.querySelector("hr")).toBeNull();
     expect(hero!.querySelector(".hero-collage")).not.toBeNull();
-    expect(hero!.querySelector(".hero-short")).toHaveTextContent(
-      site.conference.shortName,
-    );
-    expect(
-      screen.getByText(site.conference.affiliationLine),
-    ).toBeInTheDocument();
+    expect(hero!.querySelector(".hero-short")).toBeNull();
     expect(hero).toHaveTextContent(
       conferenceDatesLabel(site.importantDates) ?? "",
     );
@@ -51,28 +45,41 @@ describe("Home", () => {
     }
   });
 
-  it("renders about copy, track teasers, and a Call for Papers link", () => {
-    render(<Home />);
+  it("places About Us, aims, then Theme of Conference, with no stats banner", () => {
+    const { container } = render(<Home />);
+    const headings = screen
+      .getAllByRole("heading", { level: 2 })
+      .map((heading) => heading.textContent);
+    expect(headings.slice(0, 3)).toEqual([
+      "About Us",
+      "Conference Aims and Objectives",
+      "Theme of Conference",
+    ]);
+    expect(container.querySelector(".stats")).toBeNull();
+    expect(screen.queryByText("Conference days")).toBeNull();
     expect(
-      screen.getByRole("heading", { level: 2, name: "Theme of Conference" }),
-    ).toBeInTheDocument();
+      screen.queryByRole("heading", { name: "Host University" }),
+    ).toBeNull();
     for (const paragraph of site.conference.about) {
       expect(screen.getByText(paragraph)).toBeInTheDocument();
     }
-
-    for (const track of site.tracks) {
-      expect(
-        screen.getByRole("heading", { name: track.title }),
-      ).toBeInTheDocument();
+    expect(screen.getByText(site.conference.aims.intro)).toBeInTheDocument();
+    expect(screen.getByText(site.conference.aims.leadIn)).toBeInTheDocument();
+    for (const objective of site.conference.aims.objectives) {
+      expect(screen.getByText(objective)).toBeInTheDocument();
     }
-
-    expect(
-      screen.getByAltText("DHA Suffa University DCK Campus"),
-    ).toHaveAttribute("src", "/media/dsu-dck.png");
-
-    expect(
-      screen.getByRole("link", { name: "Call for Papers" }),
-    ).toHaveAttribute("href", "/call-for-papers");
+    expect(screen.getByText(site.conference.themeIntro)).toBeInTheDocument();
+    const themeGrid = container.querySelector(".theme-grid");
+    expect(themeGrid).not.toBeNull();
+    expect(themeGrid!.querySelectorAll(".theme-card")).toHaveLength(
+      site.themes.length,
+    );
+    for (const theme of site.themes) {
+      expect(
+        screen.getByRole("heading", { name: theme.title }),
+      ).toBeInTheDocument();
+      expect(screen.getByText(theme.blurb)).toBeInTheDocument();
+    }
   });
 
   it("renders mock speakers, programme highlights, and a committee preview", () => {
@@ -91,14 +98,6 @@ describe("Home", () => {
     expect(
       screen.getAllByRole("heading", { name: site.people[0].name }).length,
     ).toBeGreaterThan(0);
-    expect(
-      screen.getByRole("heading", { level: 2, name: "Host University" }),
-    ).toBeInTheDocument();
-    for (const faculty of site.faculties) {
-      expect(
-        screen.getByRole("heading", { name: faculty.title }),
-      ).toBeInTheDocument();
-    }
   });
 
   it("renders Submit a Paper and Learn More CTAs", () => {

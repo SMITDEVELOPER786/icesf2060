@@ -1,6 +1,6 @@
-# ICESF-2026
+# ISRC-STM 2026
 
-Conference website for DHA Suffa University — ICESF-2026.
+Conference website for DHA Suffa University — ISRC-STM 2026.
 
 ## Run locally
 
