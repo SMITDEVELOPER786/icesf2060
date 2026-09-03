@@ -20,6 +20,7 @@ function ThemeIcon({ id }: { id: string }) {
 function iconPaths(id: string) {
   switch (id) {
     case "ai-smart-systems":
+    case "ai-data-smart":
       return (
         <>
           <path d="M12 3.5a5 5 0 0 1 5 5c0 2.4-1.4 3.6-2.2 4.4-.5.5-.8 1.1-.8 1.8H10c0-.7-.3-1.3-.8-1.8C8.4 12.1 7 10.9 7 8.5a5 5 0 0 1 5-5Z" />

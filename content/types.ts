@@ -50,6 +50,12 @@ export type RegistrationFee = {
   amount: string;
 };
 
+export type Partner = {
+  id: string;
+  name: string;
+  logoSrc: string;
+};
+
 export type SiteContent = {
   conference: {
     shortName: string;
@@ -58,6 +64,7 @@ export type SiteContent = {
     organizer: string;
     affiliationLine: string;
     venue: string;
+    organizedBy: string;
     city: string;
     announcement: string | null;
     motto: string;
@@ -77,6 +84,7 @@ export type SiteContent = {
   themes: Track[];
   people: Person[];
   speakers: Speaker[];
+  partners: Partner[];
   registrationFees: RegistrationFee[];
   contact: {
     email: string;

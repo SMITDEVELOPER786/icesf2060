@@ -30,6 +30,22 @@ describe("Home", () => {
       conferenceDatesLabel(site.importantDates) ?? "",
     );
     expect(hero).toHaveTextContent(`Venue: ${site.conference.venue}`);
+    expect(hero).toHaveTextContent(site.conference.organizedBy);
+  });
+
+  it("renders partner logos below Submit an Abstract in the hero", () => {
+    const { container } = render(<Home />);
+    const hero = container.querySelector("section.hero");
+    const banner = hero!.querySelector(".partner-banner");
+    expect(banner).not.toBeNull();
+    expect(
+      screen.getByRole("region", { name: "Partner institutions" }),
+    ).toBeInTheDocument();
+    for (const partner of site.partners) {
+      expect(
+        screen.getByRole("img", { name: partner.name }),
+      ).toHaveAttribute("src", partner.logoSrc);
+    }
   });
 
   it("lists important dates from site only", () => {
@@ -82,16 +98,11 @@ describe("Home", () => {
     }
   });
 
-  it("renders mock speakers, programme highlights, and a committee preview", () => {
+  it("renders mock speakers and a committee preview", () => {
     render(<Home />);
     expect(
-      screen.getByRole("heading", { level: 2, name: "Agenda Highlights" }),
+      screen.getByRole("heading", { level: 2, name: "Keynote Speakers" }),
     ).toBeInTheDocument();
-    for (const item of site.programme) {
-      expect(
-        screen.getByRole("heading", { name: item.title }),
-      ).toBeInTheDocument();
-    }
     expect(
       screen.getAllByRole("heading", { name: site.speakers[0].name }).length,
     ).toBeGreaterThan(0);
@@ -100,18 +111,20 @@ describe("Home", () => {
     ).toBeGreaterThan(0);
   });
 
-  it("renders Submit a Paper and Learn More CTAs", () => {
+  it("renders Submit an Abstract and Learn More CTAs", () => {
     render(<Home />);
     expect(
       screen.getByRole("button", {
-        name: "Submit a Paper — link to be announced",
+        name: "Submit an Abstract — link to be announced",
       }),
     ).toBeDisabled();
     expect(screen.getByRole("link", { name: "Learn More" })).toHaveAttribute(
       "href",
       "/call-for-papers",
     );
-    expect(screen.queryByRole("link", { name: "Submit a Paper" })).toBeNull();
+    expect(
+      screen.queryByRole("link", { name: "Submit an Abstract" }),
+    ).toBeNull();
   });
 
   it("embeds Event JSON-LD without IEEE as organizer", () => {

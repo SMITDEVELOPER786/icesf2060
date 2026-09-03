@@ -6,11 +6,12 @@ export const site: SiteContent = {
   conference: {
     shortName: "ISRC-STM 2026",
     fullTitle:
-      "International Student Research Conference on Sustainable Technology & Management",
+      "3rd International Student Research Conference on Sustainable Technology & Management",
     subtitle: "Technology, Management, Human Values & ESG Perspectives",
     organizer: "DHA Suffa University",
     affiliationLine: "",
     venue: "DHA Suffa University Main Campus, DHA Phase VII (Ext.), Karachi",
+    organizedBy: "Organized by the Directorate of Postgraduate Programs",
     city: "Karachi",
     motto: "Learn to discover",
     announcement: "Abstract submission deadline: 30 September 2026",
@@ -22,7 +23,7 @@ export const site: SiteContent = {
     ],
     aims: {
       intro:
-        "The International Student Research Conference on Sustainable Technology & Management (ISRC-STM 2026) aims to provide an interdisciplinary platform for students, researchers, academicians, and industry professionals to present innovative research, exchange ideas, and explore practical solutions for a sustainable future.",
+        "The 3rd International Student Research Conference on Sustainable Technology & Management (ISRC-STM 2026) aims to provide an interdisciplinary platform for students, researchers, academicians, and industry professionals to present innovative research, exchange ideas, and explore practical solutions for a sustainable future.",
       leadIn: "The conference seeks to:",
       objectives: [
         "Promote student-led research, innovation, and scholarly collaboration across multiple disciplines.",
@@ -38,7 +39,7 @@ export const site: SiteContent = {
       ],
     },
     themeIntro:
-      "Engineering a sustainable future is reshaping technology, enterprise, and public life, creating both opportunities and responsibilities in the ESG era. ISRC-STM 2026 brings researchers and practitioners together to examine technology, management, human values, and global perspectives, and to share work that advances that agenda.",
+      "Engineering a sustainable future is reshaping technology, enterprise, and public life, creating both opportunities and responsibilities in the ESG era. ISRC-STM 2026 brings together students, researchers, academics, and practitioners to explore the intersection of technology, management, human values, and sustainability, and to share research that contributes to responsible and sustainable development.",
     guidelines: [
       "Submissions must be original and not under review elsewhere.",
       "Full papers should follow the IEEE conference paper format when a template link is provided.",
@@ -46,10 +47,26 @@ export const site: SiteContent = {
     ],
   },
   importantDates: [
-    { id: "abstract", label: "Abstract Submission", date: "30 September 2026" },
-    { id: "notification", label: "Notification of Acceptance", date: "10 October 2026" },
-    { id: "full-paper", label: "Full Paper Submission", date: "30 October 2026" },
-    { id: "conference", label: "Conference", date: "9–10 December 2026" },
+    {
+      id: "abstract",
+      label: "Abstract Submission Deadline",
+      date: "10 Nov 2026",
+    },
+    {
+      id: "notification",
+      label: "Notification of Acceptance of Abstract",
+      date: "20 Nov 2026",
+    },
+    {
+      id: "full-paper",
+      label: "Deadline for Presentation Submission",
+      date: "30 Nov 2026",
+    },
+    {
+      id: "conference",
+      label: "Conference Date",
+      date: "9 and 10 December 2026",
+    },
   ],
   programme: [
     {
@@ -132,132 +149,74 @@ export const site: SiteContent = {
   themes: [
     {
       id: "sustainable-engineering",
-      title: "Sustainable Engineering",
+      title: "Sustainable Engineering & Green Infrastructure",
       blurb:
-        "Engineering solutions for sustainable infrastructure, materials, manufacturing, transportation, and environmentally responsible development.",
+        "Engineering solutions for renewable energy, sustainable infrastructure, smart grids, green buildings, advanced materials, manufacturing, transportation, and resource-efficient development.",
     },
     {
-      id: "ai-smart-systems",
-      title: "AI & Smart Systems",
+      id: "ai-data-smart",
+      title: "AI, Data & Smart Systems",
       blurb:
-        "AI, machine learning, IoT, digital twins, and intelligent systems supporting sustainable environments and communities.",
-    },
-    {
-      id: "data-digital",
-      title: "Data & Digital Transformation",
-      blurb:
-        "Data analytics, digital platforms, and emerging technologies enabling informed and sustainable decision-making.",
-    },
-    {
-      id: "energy-green",
-      title: "Energy & Green Infrastructure",
-      blurb:
-        "Renewable energy, smart grids, energy efficiency, EV infrastructure, and sustainable built environments.",
+        "Artificial intelligence, machine learning, IoT, digital twins, data analytics, and intelligent systems supporting sustainable environments, industries, communities, and informed decision-making.",
     },
     {
       id: "sustainable-business",
-      title: "Sustainable Business & ESG",
+      title: "Sustainable Business, ESG & Supply Chains",
       blurb:
-        "Business models, ESG strategy, sustainable finance, corporate reporting, and responsible organizational practices.",
-    },
-    {
-      id: "human-values",
-      title: "Human Values & Ethics",
-      blurb:
-        "Ethics, social responsibility, inclusion, well-being, responsible AI, and the human dimensions of sustainability.",
-    },
-    {
-      id: "supply-chains",
-      title: "Sustainable Supply Chains",
-      blurb:
-        "Green operations, circular economy, sustainable logistics, resource efficiency, and resilient supply-chain management.",
+        "Sustainable business models, ESG strategy and reporting, green finance, circular economy, responsible operations, sustainable logistics, and resilient supply-chain management.",
     },
     {
       id: "governance-policy",
-      title: "Governance & Policy",
+      title: "Governance, Policy & Responsible Innovation",
       blurb:
-        "Corporate governance, sustainability policy, stakeholder engagement, regulatory frameworks, and institutional responsibility.",
+        "Sustainability governance, regulatory frameworks, stakeholder engagement, institutional responsibility, responsible innovation, data governance, and policy approaches for sustainable development.",
+    },
+    {
+      id: "human-values",
+      title: "Human Values, Ethics & Well-being",
+      blurb:
+        "Ethics, social responsibility, inclusion, responsible AI, human-centered innovation, organizational well-being, and the social and ethical dimensions of technological and sustainable transformation.",
     },
     {
       id: "society-sdg",
-      title: "Society & Sustainable Development",
+      title: "Society, Education & Sustainable Development",
       blurb:
-        "Behavior change, responsible consumption, social equity, education, workforce transformation, and community sustainability.",
+        "Social equity, behavior change, responsible consumption, education, green skills, workforce transformation, community engagement, and inclusive approaches to sustainable development.",
     },
   ],
   // Placeholder mock entries for layout only — replace with confirmed organizers before launch.
   people: [
     {
-      id: "patron-1",
-      name: "Prof. A. Patron",
-      role: "Conference Patron",
-      section: "patron",
-      affiliation: "Host University",
-      photoSrc: null,
+      id: "dean-eas",
+      name: "Engr. Prof. Dr. Ahmad Hussain",
+      role: "Dean, Faculty of Engineering and Applied Sciences",
+      section: "organizing",
+      affiliation: "DHA Suffa University",
+      photoSrc: "/media/people/ahmad-hussain-dean.jpeg",
     },
     {
-      id: "chair-1",
-      name: "Dr. B. Chair",
-      role: "Conference Chair",
-      section: "chair",
-      affiliation: "Faculty of Engineering",
-      photoSrc: null,
+      id: "dean-cit",
+      name: "Prof. Dr. Syed Zafar Nasir",
+      role: "Dean, Faculty of Computing & Information Technology",
+      section: "organizing",
+      affiliation: "DHA Suffa University",
+      photoSrc: "/media/people/syed-zafar-nasir-dean.jpg",
     },
     {
-      id: "cochair-1",
-      name: "Dr. C. Co-Chair",
-      role: "Conference Co-Chair",
-      section: "co-chair",
-      affiliation: "Faculty of Computing",
-      photoSrc: null,
+      id: "dean-mss",
+      name: "Prof. Dr. Imtiaz Arif",
+      role: "Dean, Faculty of Management Sciences",
+      section: "organizing",
+      affiliation: "DHA Suffa University",
+      photoSrc: "/media/people/imtiaz-arif-dean.png",
     },
     {
-      id: "cochair-2",
-      name: "Dr. D. Co-Chair",
-      role: "Conference Co-Chair",
-      section: "co-chair",
-      affiliation: "Faculty of Management",
-      photoSrc: null,
-    },
-    {
-      id: "sec-1",
-      name: "Dr. E. Secretary",
-      role: "Conference Secretary",
-      section: "secretary",
-      affiliation: "Host University",
-      photoSrc: null,
-    },
-    {
-      id: "sec-2",
-      name: "Engr. F. Secretary",
-      role: "Conference Secretary",
-      section: "secretary",
-      affiliation: "Host University",
-      photoSrc: null,
-    },
-    {
-      id: "prog-1",
-      name: "Dr. G. Program",
-      role: "Program Chair",
-      section: "program",
-      affiliation: "Program Committee",
-      photoSrc: null,
-    },
-    {
-      id: "prog-2",
-      name: "Dr. H. Program",
-      role: "Program Co-Chair",
-      section: "program",
-      affiliation: "Program Committee",
-      photoSrc: null,
-    },
-    {
-      id: "rev-1",
-      name: "Dr. I. Review",
-      role: "Review Chair",
-      section: "review",
-      affiliation: "Review Committee",
-      photoSrc: null,
+      id: "dean-hss",
+      name: "Prof. Dr. Zainab Hussain Bhutto",
+      role: "Dean, Faculty of Humanities & Social Sciences",
+      section: "organizing",
+      affiliation: "DHA Suffa University",
+      photoSrc: "/media/people/zainab-hussain-bhutto-dean.png",
     },
     {
       id: "org-1",
@@ -270,43 +229,73 @@ export const site: SiteContent = {
   ],
   speakers: [
     {
-      id: "sp-1",
-      name: "Keynote Speaker One",
-      affiliation: "Partner University",
-      talkTitle: "Keynote talk title (to be confirmed)",
-      bio: "Short bio placeholder for the opening keynote.",
+      id: "minhas",
+      name: "Prof. Dr. Ahmed Saeed Minhas",
+      affiliation: "Vice Chancellor, DHA Suffa University",
+      bio: "Vice Chancellor of DHA Suffa University, Karachi.",
+      photoSrc: "/media/speakers/minhas.jpeg",
+    },
+    {
+      id: "afzal-haque",
+      name: "Prof. Dr. Muhammad Afzal Haque",
+      affiliation:
+        "Vice Chancellor, Sir Syed University of Engineering & Technology (SSUET)",
+      bio: "Vice Chancellor of Sir Syed University of Engineering & Technology, Karachi.",
+      photoSrc: "/media/speakers/afzal-haque.jpg",
+    },
+    {
+      id: "vali-uddin",
+      name: "Prof. Dr. Engr. Vali Uddin",
+      affiliation: "Vice Chancellor, UIT University",
+      bio: "Vice Chancellor of UIT University, Karachi.",
+      photoSrc: "/media/speakers/vali-uddin.jpg",
+    },
+    {
+      id: "pathan",
+      name: "Prof. Dr. Dur Muhammad Pathan",
+      affiliation:
+        "Pro-Vice Chancellor, MUET, SZAB Campus, Khairpur Mir’s",
+      bio: "Pro-Vice Chancellor of Mehran University of Engineering & Technology, Shaheed Z.A. Bhutto Campus, Khairpur Mir’s.",
       photoSrc: null,
     },
     {
-      id: "sp-2",
-      name: "Keynote Speaker Two",
-      affiliation: "Industry Partner",
-      talkTitle: "Keynote talk title (to be confirmed)",
-      bio: "Short bio placeholder for a technology keynote.",
-      photoSrc: null,
-    },
-    {
-      id: "sp-3",
-      name: "Keynote Speaker Three",
-      affiliation: "Research Institute",
-      talkTitle: "Keynote talk title (to be confirmed)",
-      bio: "Short bio placeholder for a management and ESG keynote.",
-      photoSrc: null,
-    },
-    {
-      id: "sp-4",
-      name: "Keynote Speaker Four",
-      affiliation: "Host University",
-      talkTitle: "Keynote talk title (to be confirmed)",
-      bio: "Short bio placeholder for a human values keynote.",
+      id: "broderick",
+      name: "Prof. Amanda J. Broderick",
+      affiliation: "Vice-Chancellor & President, University of East London",
+      bio: "Vice-Chancellor and President of the University of East London.",
       photoSrc: null,
     },
   ],
+  partners: [
+    {
+      id: "dsu",
+      name: "DHA Suffa University",
+      logoSrc: "/media/partners/dsu.png",
+    },
+    {
+      id: "ssuet",
+      name: "Sir Syed University of Engineering & Technology",
+      logoSrc: "/media/partners/ssuet.png",
+    },
+    {
+      id: "uit",
+      name: "UIT University",
+      logoSrc: "/media/partners/uit.png",
+    },
+    {
+      id: "muet",
+      name: "MUET, Shaheed Z.A. Bhutto Campus, Khairpur Mirs",
+      logoSrc: "/media/partners/muet.png",
+    },
+    {
+      id: "uel",
+      name: "University of East London",
+      logoSrc: "/media/partners/uel.png",
+    },
+  ],
   registrationFees: [
-    { id: "ieee-member", category: "IEEE member", amount: "USD 180" },
-    { id: "non-member", category: "Non-member", amount: "USD 230" },
-    { id: "student-ieee", category: "Student (IEEE member)", amount: "USD 90" },
-    { id: "student", category: "Student (non-member)", amount: "USD 120" },
+    { id: "national-fulltime", category: "National Full-Time Students", amount: "Rs 2,500" },
+    { id: "online", category: "Online / International Students", amount: "Rs 1,500 / USD 15" },
   ],
   contact: {
     email: "icesf@dsu.edu.pk",
@@ -325,9 +314,9 @@ export const site: SiteContent = {
   seo: {
     titleTemplate: "%s | ISRC-STM 2026",
     defaultTitle:
-      "ISRC-STM 2026 | International Student Research Conference on Sustainable Technology & Management",
+      "ISRC-STM 2026 | 3rd International Student Research Conference on Sustainable Technology & Management",
     description:
-      "ISRC-STM 2026, 9–10 December 2026 at DHA Suffa University, Karachi. International Student Research Conference on Sustainable Technology & Management — Technology, Management, Human Values & ESG Perspectives.",
+      "ISRC-STM 2026, 9–10 December 2026 at DHA Suffa University, Karachi. 3rd International Student Research Conference on Sustainable Technology & Management — Technology, Management, Human Values & ESG Perspectives.",
     ogImage: null,
   },
 };

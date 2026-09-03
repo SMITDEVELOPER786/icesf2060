@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { AgendaTimeline } from "@/components/AgendaTimeline";
 import { CtaLink } from "@/components/CtaLink";
 import { DateCards } from "@/components/DateCards";
 import { EventJsonLd } from "@/components/EventJsonLd";
 import { HeroCollage } from "@/components/HeroCollage";
+import { PartnerBanner } from "@/components/PartnerBanner";
 import { PersonGrid } from "@/components/PersonGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ThemeCards } from "@/components/ThemeCards";
@@ -28,15 +28,17 @@ export default function Home() {
             <div className="hero-meta">
               {dates ? <p className="hero-dates">{dates}</p> : null}
               <p className="hero-venue">Venue: {site.conference.venue}</p>
+              <p className="hero-organized">{site.conference.organizedBy}</p>
             </div>
             <div className="cta-pair">
               <CtaLink className="cta" href={site.links.easychair} compact>
-                Submit a Paper
+              Submit an Abstract
               </CtaLink>
               <Link className="cta cta-light" href="/call-for-papers">
                 Learn More
               </Link>
             </div>
+            <PartnerBanner partners={site.partners} />
           </div>
         </div>
       </section>
@@ -79,13 +81,7 @@ export default function Home() {
       </section>
       <section className="band">
         <div className="page-body">
-          <SectionHeading>Agenda Highlights</SectionHeading>
-          <AgendaTimeline items={site.programme} />
-        </div>
-      </section>
-      <section className="band band-alt">
-        <div className="page-body">
-          <SectionHeading>Keynote Speaker</SectionHeading>
+          <SectionHeading>Keynote Speakers</SectionHeading>
           <PersonGrid
             people={site.speakers}
             emptyLabel="Keynote speakers to be announced."
