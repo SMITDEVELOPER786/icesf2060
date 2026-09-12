@@ -221,6 +221,15 @@ export const site: SiteContent = {
       affiliation: "Dean, Faculty of Management Sciences, DHA Suffa University",
       photoSrc: "/media/people/imtiaz-arif-dean.png",
     },
+    {
+      id: "cochair-hss1",
+      name: "Prof. Dr. Zainab Hussain Bhutto",
+      role: "Conference Co-Chair",
+      section: "co-chair",
+      affiliation:
+        "Dean, Faculty of Humanities & Social Sciences, DHA Suffa University",
+      photoSrc: "/media/people/rabia.jpg",
+    },
    
     {
       id: "cochair-hss",
