@@ -197,7 +197,7 @@ export const site: SiteContent = {
     {
       id: "sec-1",
       name: "Engr. Prof. Dr. Ahmad Hussain",
-      role: "Conference Secretary",
+      role: "Conference Chair",
       section: "secretary",
       affiliation:
         "Dean, Faculty of Engineering and Applied Sciences, DHA Suffa University",
@@ -221,14 +221,24 @@ export const site: SiteContent = {
       affiliation: "Dean, Faculty of Management Sciences, DHA Suffa University",
       photoSrc: "/media/people/imtiaz-arif-dean.png",
     },
+   
     {
       id: "cochair-hss",
-      name: "Prof. Dr. Zainab Hussain Bhutto",
-      role: "Conference Co-Chair",
+      name: "Dr. Rabia Mumtaz",
+      role: "Conference Secretary",
       section: "co-chair",
       affiliation:
-        "Dean, Faculty of Humanities & Social Sciences, DHA Suffa University",
-      photoSrc: "/media/people/zainab-hussain-bhutto-dean.png",
+        "Researcher in Green HRM, ESG & Sustainable Business | Deputy Director",
+      photoSrc: "/media/people/rabia.jpg",
+    },
+    {
+      id: "cochair-hss3",
+      name: "Dr. Huma Jamshed",
+      role: "co Secretary Conference",
+      section: "co-chair",
+      affiliation:
+        "Head of Computer Science Department",
+      photoSrc: "/media/people/humamam.jpeg",
     },
   ],
   speakers: [
@@ -236,7 +246,7 @@ export const site: SiteContent = {
       id: "minhas",
       name: "Prof. Dr. Ahmed Saeed Minhas",
       affiliation: "Vice Chancellor, DHA Suffa University",
-      bio: "Vice Chancellor of DHA Suffa University, Karachi.",
+      bio: ".",
       photoSrc: "/media/speakers/minhas.jpeg",
     },
     {
@@ -244,14 +254,14 @@ export const site: SiteContent = {
       name: "Prof. Dr. Muhammad Afzal Haque",
       affiliation:
         "Vice Chancellor, Sir Syed University of Engineering & Technology (SSUET)",
-      bio: "Vice Chancellor of Sir Syed University of Engineering & Technology, Karachi.",
+      bio: "",
       photoSrc: "/media/speakers/afzal-haque.jpg",
     },
     {
       id: "vali-uddin",
       name: "Prof. Dr. Engr. Vali Uddin",
       affiliation: "Vice Chancellor, UIT University",
-      bio: "Vice Chancellor of UIT University, Karachi.",
+      bio: "",
       photoSrc: "/media/speakers/vali-uddin.jpg",
     },
     {
@@ -259,7 +269,7 @@ export const site: SiteContent = {
       name: "Dr Nadeem Qazi",
       affiliation:
         "Associate Professor, Department of Computer Science, UEL",
-        bio: "Computer Science And Digital Technologies Department of Computer Science & Digital Technologies,School of Architecture Computing and Engineering, University of East London.",
+        bio: "",
         photoSrc: "/media/speakers/pathan.jpg",
 
     },
@@ -268,15 +278,15 @@ export const site: SiteContent = {
       name: "Prof. Dr. Dur Muhammad Pathan",
       affiliation:
         "Pro-Vice Chancellor, MUET, SZAB Campus, Khairpur Mir’s",
-      bio: "Pro-Vice Chancellor of Mehran University of Engineering & Technology, Shaheed Z.A. Bhutto Campus, Khairpur Mir’s.",
-      photoSrc: null,
+      bio: "",
+            photoSrc: "/media/speakers/meh.png",
     },
    
     {
       id: "broderick",
       name: "Prof. Amanda J. Broderick",
       affiliation: "Vice-Chancellor & President, University of East London",
-      bio: "Vice-Chancellor and President of the University of East London.",
+      bio: "",
       photoSrc: null,
     },
   ],

@@ -1,7 +1,6 @@
 export function HeroCollage() {
   return (
     <div className="hero-collage" aria-hidden="true">
-       <img src="/media/dsu-sports.jpg" alt="" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/media/dsu-campus.png" alt="" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -9,7 +8,7 @@ export function HeroCollage() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/media/dsu-career.jpg" alt="" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
-     
+      <img src="/media/dsu-sports.jpg" alt="" />
     </div>
   );
 }
