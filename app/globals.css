@@ -124,6 +124,10 @@ main {
   margin-top: 3.5rem;
 }
 
+.bank-details {
+  margin-top: 3.5rem;
+}
+
 .announcement {
   background: linear-gradient(90deg, #4a1024, #3f0d1f);
   color: #f0c08a;
@@ -935,12 +939,13 @@ main {
   width: 58px;
   height: 58px;
   flex: 0 0 auto;
-  border-radius: 14px;
+  border-radius: 50%;
+  overflow: hidden;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem;
+  padding: 0;
   box-shadow:
     0 8px 18px -12px rgba(0, 0, 0, 0.45),
     0 1px 0 rgba(255, 255, 255, 0.9) inset;
@@ -960,7 +965,9 @@ main {
 .partner-logo-tile img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
   display: block;
 }
 
@@ -1502,8 +1509,8 @@ address div {
   .partner-logo-tile {
     width: 50px;
     height: 50px;
-    border-radius: 12px;
-    padding: 0.32rem;
+    border-radius: 50%;
+    padding: 0;
   }
 
   .partner-logo-tile:hover {

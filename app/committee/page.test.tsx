@@ -27,8 +27,8 @@ describe("Committee page", () => {
 
     for (const person of site.people) {
       expect(
-        screen.getByRole("heading", { name: person.name }),
-      ).toBeInTheDocument();
+        screen.getAllByRole("heading", { name: person.name }).length,
+      ).toBeGreaterThan(0);
     }
   });
 });

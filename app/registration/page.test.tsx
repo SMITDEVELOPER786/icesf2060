@@ -9,7 +9,7 @@ describe("Registration page", () => {
     expect(pageModule.metadata).toEqual({ title: "Registration" });
   });
 
-  it("renders fee rows and a Register CTA", () => {
+  it("renders fee rows, bank details, and a Register CTA", () => {
     render(<RegistrationPage />);
 
     expect(screen.getByText(site.conference.shortName)).toHaveClass("kicker");
@@ -23,8 +23,15 @@ describe("Registration page", () => {
     }
 
     expect(
-      screen.getByRole("button", { name: "Register — link to be announced" }),
-    ).toBeDisabled();
-    expect(screen.queryByRole("link", { name: "Register" })).toBeNull();
+      screen.getByRole("heading", { level: 2, name: "Bank Details" }),
+    ).toBeInTheDocument();
+    for (const row of site.bankDetails) {
+      expect(screen.getByText(row.label)).toBeInTheDocument();
+      expect(screen.getByText(row.value)).toBeInTheDocument();
+    }
+
+    expect(
+      screen.getByRole("link", { name: "Register" }),
+    ).toHaveAttribute("href", site.links.registration);
   });
 });

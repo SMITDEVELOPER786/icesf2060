@@ -113,18 +113,14 @@ describe("Home", () => {
 
   it("renders Submit an Abstract and Learn More CTAs", () => {
     render(<Home />);
-    expect(
-      screen.getByRole("button", {
-        name: "Submit an Abstract — link to be announced",
-      }),
-    ).toBeDisabled();
+    expect(screen.getByRole("link", { name: "Submit an Abstract" })).toHaveAttribute(
+      "href",
+      site.links.easychair,
+    );
     expect(screen.getByRole("link", { name: "Learn More" })).toHaveAttribute(
       "href",
       "/call-for-papers",
     );
-    expect(
-      screen.queryByRole("link", { name: "Submit an Abstract" }),
-    ).toBeNull();
   });
 
   it("embeds Event JSON-LD without IEEE as organizer", () => {

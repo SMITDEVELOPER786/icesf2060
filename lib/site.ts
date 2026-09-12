@@ -1,10 +1,10 @@
 import type { CommitteeSection, ImportantDate, Person } from "@/content/types";
 
 export const COMMITTEE_SECTIONS: { id: CommitteeSection; heading: string }[] = [
-  { id: "patron", heading: "Patron" },
-  { id: "chair", heading: "Chair" },
+  { id: "patron", heading: "Patron-in-Chief" },
+  { id: "secretary", heading: "Conference Secretary" },
   { id: "co-chair", heading: "Co-Chair" },
-  { id: "secretary", heading: "Secretaries" },
+  { id: "chair", heading: "Chair" },
   { id: "program", heading: "Program Committee" },
   { id: "review", heading: "Review Committee" },
   { id: "organizing", heading: "Organizing Committee" },

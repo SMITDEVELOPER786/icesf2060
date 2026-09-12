@@ -50,6 +50,11 @@ export type RegistrationFee = {
   amount: string;
 };
 
+export type BankDetail = {
+  label: string;
+  value: string;
+};
+
 export type Partner = {
   id: string;
   name: string;
@@ -86,6 +91,7 @@ export type SiteContent = {
   speakers: Speaker[];
   partners: Partner[];
   registrationFees: RegistrationFee[];
+  bankDetails: BankDetail[];
   contact: {
     email: string;
     phone: string;

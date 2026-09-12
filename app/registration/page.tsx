@@ -1,5 +1,6 @@
 import { CtaLink } from "@/components/CtaLink";
 import { PageHero } from "@/components/PageHero";
+import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/content/site";
 
 export const metadata = { title: "Registration" };
@@ -20,6 +21,20 @@ export default function RegistrationPage() {
             ))}
           </tbody>
         </table>
+        <section className="bank-details">
+          <SectionHeading>Bank Details</SectionHeading>
+          <table className="dates">
+            <caption className="kicker">DHA Suffa University</caption>
+            <tbody>
+              {site.bankDetails.map((row) => (
+                <tr key={row.label}>
+                  <th scope="row">{row.label}</th>
+                  <td>{row.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
         <p className="band-link">
           <CtaLink className="cta" href={site.links.registration}>
             Register

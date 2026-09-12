@@ -49,10 +49,7 @@ describe("Call for Papers page", () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole("button", {
-        name: "Submit abstract — link to be announced",
-      }),
-    ).toBeDisabled();
-    expect(screen.queryByRole("link", { name: "Submit abstract" })).toBeNull();
+      screen.getByRole("link", { name: "Submit abstract" }),
+    ).toHaveAttribute("href", site.links.easychair);
   });
 });

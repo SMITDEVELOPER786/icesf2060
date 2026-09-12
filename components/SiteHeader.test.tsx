@@ -27,11 +27,10 @@ describe("SiteHeader", () => {
     expect(
       screen.getByRole("link", { name: "Call for Papers" }),
     ).toHaveAttribute("href", "/call-for-papers");
-    expect(
-      screen.getByRole("button", {
-        name: "Submit paper — link to be announced",
-      }),
-    ).toBeDisabled();
+    expect(screen.getByRole("link", { name: "Submit paper" })).toHaveAttribute(
+      "href",
+      site.links.easychair,
+    );
   });
 
   it("toggles the overlay menu and returns focus on Escape", () => {

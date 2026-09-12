@@ -184,47 +184,51 @@ export const site: SiteContent = {
         "Social equity, behavior change, responsible consumption, education, green skills, workforce transformation, community engagement, and inclusive approaches to sustainable development.",
     },
   ],
-  // Placeholder mock entries for layout only — replace with confirmed organizers before launch.
+  // Conference committee — update roles with organizers before launch.
   people: [
     {
-      id: "dean-eas",
-      name: "Engr. Prof. Dr. Ahmad Hussain",
-      role: "Dean, Faculty of Engineering and Applied Sciences",
-      section: "organizing",
-      affiliation: "DHA Suffa University",
-      photoSrc: "/media/people/ahmad-hussain-dean.jpeg",
+      id: "patron-1",
+      name: "Prof. Dr. Ahmed Saeed Minhas",
+      role: "Patron-in-Chief",
+      section: "patron",
+      affiliation: "Vice Chancellor, DHA Suffa University",
+      photoSrc: "/media/speakers/minhas.jpeg",
     },
     {
-      id: "dean-cit",
+      id: "sec-1",
+      name: "Engr. Prof. Dr. Ahmad Hussain",
+      role: "Conference Secretary",
+      section: "secretary",
+      affiliation:
+        "Dean, Faculty of Engineering and Applied Sciences, DHA Suffa University",
+      photoSrc: "/media/people/ahmad-hussain-dean.jpeg",
+    },
+    
+    {
+      id: "cochair-cit",
       name: "Prof. Dr. Syed Zafar Nasir",
-      role: "Dean, Faculty of Computing & Information Technology",
-      section: "organizing",
-      affiliation: "DHA Suffa University",
+      role: "Conference Co-Chair",
+      section: "co-chair",
+      affiliation:
+        "Dean, Faculty of Computing & Information Technology, DHA Suffa University",
       photoSrc: "/media/people/syed-zafar-nasir-dean.jpg",
     },
     {
-      id: "dean-mss",
+      id: "cochair-mss",
       name: "Prof. Dr. Imtiaz Arif",
-      role: "Dean, Faculty of Management Sciences",
-      section: "organizing",
-      affiliation: "DHA Suffa University",
+      role: "Conference Co-Chair",
+      section: "co-chair",
+      affiliation: "Dean, Faculty of Management Sciences, DHA Suffa University",
       photoSrc: "/media/people/imtiaz-arif-dean.png",
     },
     {
-      id: "dean-hss",
+      id: "cochair-hss",
       name: "Prof. Dr. Zainab Hussain Bhutto",
-      role: "Dean, Faculty of Humanities & Social Sciences",
-      section: "organizing",
-      affiliation: "DHA Suffa University",
+      role: "Conference Co-Chair",
+      section: "co-chair",
+      affiliation:
+        "Dean, Faculty of Humanities & Social Sciences, DHA Suffa University",
       photoSrc: "/media/people/zainab-hussain-bhutto-dean.png",
-    },
-    {
-      id: "org-1",
-      name: "Organizing Desk",
-      role: "Local Arrangements",
-      section: "organizing",
-      affiliation: "Host University",
-      photoSrc: null,
     },
   ],
   speakers: [
@@ -251,6 +255,15 @@ export const site: SiteContent = {
       photoSrc: "/media/speakers/vali-uddin.jpg",
     },
     {
+      id: "pathan1",
+      name: "Dr Nadeem Qazi",
+      affiliation:
+        "Associate Professor, Department of Computer Science, UEL",
+        bio: "Computer Science And Digital Technologies Department of Computer Science & Digital Technologies,School of Architecture Computing and Engineering, University of East London.",
+        photoSrc: "/media/speakers/pathan.jpg",
+
+    },
+    {
       id: "pathan",
       name: "Prof. Dr. Dur Muhammad Pathan",
       affiliation:
@@ -258,6 +271,7 @@ export const site: SiteContent = {
       bio: "Pro-Vice Chancellor of Mehran University of Engineering & Technology, Shaheed Z.A. Bhutto Campus, Khairpur Mir’s.",
       photoSrc: null,
     },
+   
     {
       id: "broderick",
       name: "Prof. Amanda J. Broderick",
@@ -292,10 +306,35 @@ export const site: SiteContent = {
       name: "University of East London",
       logoSrc: "/media/partners/uel.png",
     },
+    {
+      id: "inti",
+      name: "INTI International University",
+      logoSrc: "/media/partners/inti.png",
+    },
+    {
+      id: "szabist",
+      name: "SZABIST University",
+      logoSrc: "/media/partners/szabist.png",
+    },
   ],
   registrationFees: [
     { id: "national-fulltime", category: "National Full-Time Students", amount: "Rs 2,500" },
     { id: "online", category: "Online / International Students", amount: "Rs 1,500 / USD 15" },
+  ],
+  bankDetails: [
+    { label: "Bank Name", value: "Bank AL Habib Ltd." },
+    { label: "Account Title", value: "DHA SUFFA UNIVERSITY" },
+    { label: "Account No.", value: "1074-0081-004027-01-3" },
+    { label: "Swift Code", value: "BAHLPKKA" },
+    { label: "IBAN", value: "PK06BAHL1074008100402701" },
+    { label: "Branch Name", value: "Khayaban-e-Rahat (1074)" },
+    { label: "Branch Code", value: "1074" },
+    {
+      label: "Branch Address",
+      value:
+        "Plot No. 14-C, Khayaban-e-Rahat, Lane-3, Phase-VI, D.H.A. Karachi",
+    },
+    { label: "Phone No.", value: "021-35349777-78-79" },
   ],
   contact: {
     email: "icesf@dsu.edu.pk",
@@ -307,8 +346,8 @@ export const site: SiteContent = {
     ],
   },
   links: {
-    easychair: null,
-    registration: null,
+    easychair: "https://short.do/TnN6pf",
+    registration: "https://short.do/TnN6pf",
     template: "https://www.ieee.org/conferences/publishing/templates.html",
   },
   seo: {
