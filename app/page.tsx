@@ -12,7 +12,6 @@ import { conferenceDatesLabel } from "@/lib/site";
 
 export default function Home() {
   const dates = conferenceDatesLabel(site.importantDates);
-  const featuredCommittee = site.people.slice(0, 6);
 
   return (
     <>
@@ -95,11 +94,11 @@ export default function Home() {
         <div className="page-body">
           <SectionHeading>Committee</SectionHeading>
           <PersonGrid
-            people={featuredCommittee}
+            people={site.people}
             emptyLabel="Committee members to be announced."
           />
           <p className="band-link">
-            {/* <Link href="/committee">Full committee</Link> */}
+            <Link href="/committee">Full committee</Link>
           </p>
         </div>
       </section>

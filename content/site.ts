@@ -228,7 +228,7 @@ export const site: SiteContent = {
       section: "co-chair",
       affiliation:
         "Dean, Faculty of Humanities & Social Sciences, DHA Suffa University",
-      photoSrc: "/media/people/rabia.jpg",
+      photoSrc: "/media/people/zainab-hussain-bhutto-dean.png",
     },
    
     {
