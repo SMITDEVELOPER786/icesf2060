@@ -258,6 +258,7 @@ export const site: SiteContent = {
       bio: ".",
       photoSrc: "/media/speakers/minhas.jpeg",
     },
+    
     {
       id: "afzal-haque",
       name: "Prof. Dr. Muhammad Afzal Haque",
@@ -297,6 +298,22 @@ export const site: SiteContent = {
       affiliation: "Vice-Chancellor & President, University of East London",
       bio: "",
       photoSrc: null,
+    },
+    {
+      id: "shoaib-usman",
+      name: "Prof. Dr. Shoaib Usman, Ph.D.",
+      affiliation:
+        "Department of Mechanical and Nuclear Engineering, Tennessee Tech University, Cookeville, TN, USA",
+      bio: "",
+      photoSrc: "/media/speakers/shoaib-usman.jpg",
+    },
+    {
+      id: "ng-choon-aun",
+      name: "Prof Ng Choon Aun",
+      affiliation:
+        "Dean, Faculty of Engineering and Green Technology (FEGT), Universiti Tunku Abdul Rahman (UTAR), Perak, Malaysia",
+      bio: "",
+      photoSrc: "/media/speakers/ng-choon-aun.jpg",
     },
   ],
   partners: [
@@ -365,8 +382,10 @@ export const site: SiteContent = {
     ],
   },
   links: {
-    easychair: "https://short.do/TnN6pf",
-    registration: "https://short.do/TnN6pf",
+    easychair:
+      "https://docs.google.com/forms/d/e/1FAIpQLSeYWQgzWXiRwyFgaHzBKmiaGWUe9XTO5TG_eFMfa6i55MQsuA/viewform",
+    registration:
+      "https://docs.google.com/forms/d/e/1FAIpQLSeYWQgzWXiRwyFgaHzBKmiaGWUe9XTO5TG_eFMfa6i55MQsuA/viewform",
     template: "https://www.ieee.org/conferences/publishing/templates.html",
   },
   seo: {
