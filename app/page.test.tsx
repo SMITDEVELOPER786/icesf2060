@@ -119,8 +119,24 @@ describe("Home", () => {
     );
     expect(screen.getByRole("link", { name: "Learn More" })).toHaveAttribute(
       "href",
-      "/call-for-papers",
+      "/#theme",
     );
+  });
+
+  it("exposes single-page section anchors for nav", () => {
+    const { container } = render(<Home />);
+    for (const id of [
+      "home",
+      "about",
+      "aims",
+      "theme",
+      "speakers",
+      "committee",
+      "registration",
+      "contact",
+    ]) {
+      expect(container.querySelector(`#${id}`)).not.toBeNull();
+    }
   });
 
   it("embeds Event JSON-LD without IEEE as organizer", () => {

@@ -1,8 +1,10 @@
 export const NAV_ITEMS = [
-  { href: "/", label: "Home" },
-  { href: "/call-for-papers", label: "Call for Papers" },
-  { href: "/committee", label: "Committee" },
-  { href: "/speakers", label: "Speakers" },
-  { href: "/registration", label: "Registration" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#aims", label: "Aims & Objectives" },
+  { href: "/#theme", label: "Theme" },
+  { href: "/#speakers", label: "Speakers" },
+  { href: "/#committee", label: "Committee" },
+  { href: "/#registration", label: "Registration" },
+  { href: "/#contact", label: "Contact" },
 ] as const;

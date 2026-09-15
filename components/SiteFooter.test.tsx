@@ -7,7 +7,7 @@ describe("SiteFooter", () => {
     render(<SiteFooter />);
 
     expect(screen.getByText("ISRC-STM 2026")).toBeInTheDocument();
-    expect(screen.getByText("9–10 December 2026")).toBeInTheDocument();
+    expect(screen.getByText("9 and 10 December 2026")).toBeInTheDocument();
     expect(
       screen.getByText(
         "Organized by DHA Suffa University",

@@ -44,7 +44,7 @@ export function SiteFooter() {
             <p>
               <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`}>
                 {site.contact.phone}
-              </a>Z
+              </a>
             </p>
           ) : null}
         </div>

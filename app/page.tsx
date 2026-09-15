@@ -8,15 +8,16 @@ import { PersonGrid } from "@/components/PersonGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ThemeCards } from "@/components/ThemeCards";
 import { site } from "@/content/site";
-import { conferenceDatesLabel } from "@/lib/site";
+import { COMMITTEE_SECTIONS, conferenceDatesLabel, groupPeople } from "@/lib/site";
 
 export default function Home() {
   const dates = conferenceDatesLabel(site.importantDates);
+  const grouped = groupPeople(site.people);
 
   return (
     <>
       <EventJsonLd />
-      <section className="hero">
+      <section id="home" className="hero">
         <HeroCollage />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
@@ -31,9 +32,9 @@ export default function Home() {
             </div>
             <div className="cta-pair">
               <CtaLink className="cta" href={site.links.easychair} compact>
-              Submit an Abstract
+                Submit an Abstract
               </CtaLink>
-              <Link className="cta cta-light" href="/call-for-papers">
+              <Link className="cta cta-light" href="/#theme">
                 Learn More
               </Link>
             </div>
@@ -41,7 +42,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="band about-band">
+
+      <section id="about" className="band about-band">
         <div className="page-body">
           <SectionHeading>About Us</SectionHeading>
           <div className="copy-stack">
@@ -51,7 +53,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="band band-alt">
+
+      <section id="aims" className="band band-alt">
         <div className="page-body">
           <SectionHeading>Conference Aims and Objectives</SectionHeading>
           <div className="copy-stack">
@@ -65,41 +68,108 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="band theme-band">
+
+      <section id="theme" className="band theme-band">
         <div className="page-body">
           <SectionHeading>Theme of Conference</SectionHeading>
           <p className="theme-intro">{site.conference.themeIntro}</p>
           <ThemeCards themes={site.themes} />
         </div>
       </section>
-      <section className="band band-alt">
+
+      <section id="dates" className="band band-alt">
         <div className="page-body">
           <SectionHeading>Important Dates</SectionHeading>
           <DateCards dates={site.importantDates} />
         </div>
       </section>
-      <section className="band">
+
+      <section id="speakers" className="band">
         <div className="page-body">
           <SectionHeading>Keynote Speakers</SectionHeading>
           <PersonGrid
             people={site.speakers}
             emptyLabel="Keynote speakers to be announced."
           />
+        </div>
+      </section>
+
+      <section id="committee" className="band band-alt">
+        <div className="page-body">
+          <SectionHeading>Committee</SectionHeading>
+          {site.people.length === 0 ? (
+            <p className="empty">Committee members to be announced.</p>
+          ) : (
+            COMMITTEE_SECTIONS.map((section) => {
+              const people = grouped[section.id];
+              if (people.length === 0) return null;
+              return (
+                <div key={section.id} className="committee-block">
+                  <h3 className="committee-subhead">{section.heading}</h3>
+                  <PersonGrid people={people} emptyLabel="To be announced" />
+                </div>
+              );
+            })
+          )}
+        </div>
+      </section>
+
+      <section id="registration" className="band">
+        <div className="page-body">
+          <SectionHeading>Registration</SectionHeading>
+          <table className="dates">
+            <caption className="kicker">Registration fees</caption>
+            <tbody>
+              {site.registrationFees.map((fee) => (
+                <tr key={fee.id}>
+                  <th scope="row">{fee.category}</th>
+                  <td>{fee.amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="bank-details">
+            <SectionHeading>Bank Details</SectionHeading>
+            <table className="dates">
+              <caption className="kicker">DHA Suffa University</caption>
+              <tbody>
+                {site.bankDetails.map((row) => (
+                  <tr key={row.label}>
+                    <th scope="row">{row.label}</th>
+                    <td>{row.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <p className="band-link">
-            <Link href="/speakers">View all speakers</Link>
+            <CtaLink className="cta" href={site.links.registration}>
+              Register
+            </CtaLink>
           </p>
         </div>
       </section>
-      <section className="band">
+
+      <section id="contact" className="band band-alt">
         <div className="page-body">
-          <SectionHeading>Committee</SectionHeading>
-          <PersonGrid
-            people={site.people}
-            emptyLabel="Committee members to be announced."
-          />
-          <p className="band-link">
-            <Link href="/committee">Full committee</Link>
-          </p>
+          <SectionHeading>Contact</SectionHeading>
+          <div className="contact-card card">
+            <address>
+              {site.contact.addressLines.map((line) => (
+                <div key={line}>{line}</div>
+              ))}
+            </address>
+            <p>
+              <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+            </p>
+            {site.contact.phone ? (
+              <p>
+                <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`}>
+                  {site.contact.phone}
+                </a>
+              </p>
+            ) : null}
+          </div>
         </div>
       </section>
     </>

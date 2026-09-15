@@ -31,6 +31,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
   overflow-x: clip;
   -webkit-text-size-adjust: 100%;
 }
@@ -128,6 +129,35 @@ main {
   margin-top: 3.5rem;
 }
 
+.committee-block + .committee-block {
+  margin-top: 2.5rem;
+}
+
+.committee-subhead {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+.band-alt .committee-subhead {
+  color: #f0c08a;
+}
+
+#about,
+#aims,
+#theme,
+#dates,
+#speakers,
+#committee,
+#registration,
+#contact,
+#home {
+  scroll-margin-top: 6.5rem;
+}
+
 .announcement {
   background: linear-gradient(90deg, #4a1024, #3f0d1f);
   color: #f0c08a;
@@ -161,11 +191,11 @@ main {
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
-  column-gap: 1rem;
-  max-width: 1280px;
+  column-gap: 0.75rem;
+  max-width: 1440px;
   margin: 0 auto;
   min-height: 82px;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1.15rem;
 }
 
 .brand {
@@ -1826,7 +1856,16 @@ address div {
   }
 
   .site-header-inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 0.65rem;
+  }
+
+  .brand-lines {
+    display: none;
+  }
+
+  .brand-short {
+    font-size: 22px;
   }
 
   .menu-btn {
@@ -1839,14 +1878,16 @@ address div {
     position: static;
     grid-column: 2;
     width: auto;
+    min-width: 0;
     padding: 0;
     background: transparent;
   }
 
   .site-menu ul {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0 1.15rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0 0.55rem;
     padding: 0;
     justify-content: flex-end;
   }
@@ -1854,10 +1895,21 @@ address div {
   .site-menu li {
     margin: 0;
     border-bottom: none;
+    flex-shrink: 0;
   }
 
   .nav-link {
-    padding: 0.25rem 0 0.5rem;
+    padding: 0.25rem 0 0.45rem;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .site-header .cta,
+  .header-cta {
+    min-height: 40px;
+    padding: 0.45rem 0.9rem;
+    font-size: 11px;
   }
 
   .track-list {
@@ -1870,6 +1922,37 @@ address div {
 
   .person-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
+  .brand-lines {
+    display: block;
+  }
+
+  .brand-short {
+    font-size: 26px;
+  }
+
+  .site-header-inner {
+    column-gap: 0.85rem;
+    padding: 0.7rem 1.35rem;
+  }
+
+  .site-menu ul {
+    gap: 0 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .site-header .cta,
+  .header-cta {
+    min-height: 44px;
+    padding: 0.5rem 1.15rem;
+    font-size: 12px;
   }
 }
 

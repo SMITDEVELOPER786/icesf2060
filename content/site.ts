@@ -243,7 +243,7 @@ export const site: SiteContent = {
     {
       id: "cochair-hss3",
       name: "Dr. Huma Jamshed",
-      role: "co Secretary Conference",
+      role: "co Conference Secretary",
       section: "co-chair",
       affiliation:
         "Head of Computer Science Department",
@@ -314,6 +314,14 @@ export const site: SiteContent = {
         "Dean, Faculty of Engineering and Green Technology (FEGT), Universiti Tunku Abdul Rahman (UTAR), Perak, Malaysia",
       bio: "",
       photoSrc: "/media/speakers/ng-choon-aun.jpg",
+    },
+    {
+      id: "abdullah-hj-yassin",
+      name: "Prof. Ir. Dr Abdullah Hj Yassin",
+      affiliation:
+        "Dean, Faculty of Engineering Universiti Malaysia Sarawak (UNIMAS) Sarawak, Malaysia",
+      bio: "",
+      photoSrc: "/media/speakers/IMG1.jpeg",
     },
   ],
   partners: [
