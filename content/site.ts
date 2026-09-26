@@ -243,7 +243,7 @@ export const site: SiteContent = {
     {
       id: "cochair-hss3",
       name: "Dr. Huma Jamshed",
-      role: "co Conference Secretary",
+      role: "Conference Co Secretary",
       section: "co-chair",
       affiliation:
         "Head of Computer Science Department",
@@ -381,7 +381,7 @@ export const site: SiteContent = {
     { label: "Phone No.", value: "021-35349777-78-79" },
   ],
   contact: {
-    email: "icesf@dsu.edu.pk",
+    email: "rabia.mumtaz@dsu.edu.pk",
     phone: "+92 21 3524 4851",
     addressLines: [
       "DHA Suffa University — Main Campus",
@@ -391,7 +391,7 @@ export const site: SiteContent = {
   },
   links: {
     easychair:
-      "https://docs.google.com/forms/d/e/1FAIpQLSeYWQgzWXiRwyFgaHzBKmiaGWUe9XTO5TG_eFMfa6i55MQsuA/viewform",
+      "https://forms.gle/A4FaMCaCzqGd1J4M8",
     registration:
       "https://docs.google.com/forms/d/e/1FAIpQLSeYWQgzWXiRwyFgaHzBKmiaGWUe9XTO5TG_eFMfa6i55MQsuA/viewform",
     template: "https://www.ieee.org/conferences/publishing/templates.html",

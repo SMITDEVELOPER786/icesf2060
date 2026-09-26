@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CtaLink } from "@/components/CtaLink";
+import { ContactForm } from "@/components/ContactForm";
 import { DateCards } from "@/components/DateCards";
 import { EventJsonLd } from "@/components/EventJsonLd";
 import { HeroCollage } from "@/components/HeroCollage";
@@ -8,11 +9,10 @@ import { PersonGrid } from "@/components/PersonGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ThemeCards } from "@/components/ThemeCards";
 import { site } from "@/content/site";
-import { COMMITTEE_SECTIONS, conferenceDatesLabel, groupPeople } from "@/lib/site";
+import { conferenceDatesLabel } from "@/lib/site";
 
 export default function Home() {
   const dates = conferenceDatesLabel(site.importantDates);
-  const grouped = groupPeople(site.people);
 
   return (
     <>
@@ -97,20 +97,10 @@ export default function Home() {
       <section id="committee" className="band band-alt">
         <div className="page-body">
           <SectionHeading>Committee</SectionHeading>
-          {site.people.length === 0 ? (
-            <p className="empty">Committee members to be announced.</p>
-          ) : (
-            COMMITTEE_SECTIONS.map((section) => {
-              const people = grouped[section.id];
-              if (people.length === 0) return null;
-              return (
-                <div key={section.id} className="committee-block">
-                  <h3 className="committee-subhead">{section.heading}</h3>
-                  <PersonGrid people={people} emptyLabel="To be announced" />
-                </div>
-              );
-            })
-          )}
+          <PersonGrid
+            people={site.people}
+            emptyLabel="Committee members to be announced."
+          />
         </div>
       </section>
 
@@ -153,22 +143,25 @@ export default function Home() {
       <section id="contact" className="band band-alt">
         <div className="page-body">
           <SectionHeading>Contact</SectionHeading>
-          <div className="contact-card card">
-            <address>
-              {site.contact.addressLines.map((line) => (
-                <div key={line}>{line}</div>
-              ))}
-            </address>
-            <p>
-              <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-            </p>
-            {site.contact.phone ? (
+          <div className="contact-layout">
+            <div className="contact-card card">
+              <address>
+                {site.contact.addressLines.map((line) => (
+                  <div key={line}>{line}</div>
+                ))}
+              </address>
               <p>
-                <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`}>
-                  {site.contact.phone}
-                </a>
+                <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
               </p>
-            ) : null}
+              {site.contact.phone ? (
+                <p>
+                  <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`}>
+                    {site.contact.phone}
+                  </a>
+                </p>
+              ) : null}
+            </div>
+            <ContactForm toEmail={site.contact.email} />
           </div>
         </div>
       </section>

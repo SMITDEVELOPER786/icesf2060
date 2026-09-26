@@ -1412,12 +1412,94 @@ address div {
   margin: 0;
 }
 
+.contact-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
 .contact-card {
-  max-width: 28rem;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding: 2rem 1.6rem;
   text-align: center;
   border-bottom: 4px solid var(--green);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.75rem 1.5rem;
+  background: rgba(255, 248, 241, 0.92);
+  border: 1px solid rgba(201, 164, 108, 0.35);
+  border-radius: 12px;
+}
+
+.contact-form-row {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--heading);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #1a1a1a;
+  background: var(--white);
+  border: 1px solid rgba(44, 8, 20, 0.18);
+  border-radius: 8px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(212, 90, 18, 0.45);
+  outline-offset: 1px;
+  border-color: var(--green);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.contact-form .cta {
+  justify-self: start;
+  margin-top: 0.25rem;
+}
+
+.contact-form-note {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(42, 8, 20, 0.72);
+}
+
+@media (min-width: 800px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+    gap: 2.25rem;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .page-hero {

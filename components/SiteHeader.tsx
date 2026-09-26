@@ -75,7 +75,7 @@ export function SiteHeader() {
           </ul>
         </nav>
         <CtaLink className="cta header-cta" href={site.links.easychair} compact>
-          Submit paper
+          Submit Abstract
         </CtaLink>
       </div>
     </header>
