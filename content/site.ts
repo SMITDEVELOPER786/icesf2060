@@ -14,7 +14,7 @@ export const site: SiteContent = {
     organizedBy: "Organized by the Directorate of Postgraduate Programs",
     city: "Karachi",
     motto: "Learn to discover",
-    announcement: "Abstract submission deadline: 10 November 2026",
+    announcement: "Abstract submission deadline: 25 November 2026",
     about: [
       "DHA Suffa University (DSU), Karachi, is committed to promoting academic excellence, research, innovation, and interdisciplinary learning. Through its teaching and research initiatives, the University provides a platform for students, researchers, academicians, and professionals to engage with emerging challenges and contribute innovative solutions for society and industry.",
       "With expertise spanning Computing and Information Technology, Management Sciences, Mechanical and Electrical Engineering, and Humanities and Social Sciences, DSU encourages collaboration across disciplines. This multidisciplinary environment enables research that combines technological advancement with effective management, ethical responsibility, human values, and sustainable development.",
@@ -50,18 +50,9 @@ export const site: SiteContent = {
     {
       id: "abstract",
       label: "Abstract Submission Deadline",
-      date: "10 Nov 2026",
+      date: "25 Nov 2026",
     },
-    {
-      id: "notification",
-      label: "Notification of Acceptance of Abstract",
-      date: "20 Nov 2026",
-    },
-    {
-      id: "full-paper",
-      label: "Deadline for Presentation Submission",
-      date: "30 Nov 2026",
-    },
+   
     {
       id: "conference",
       label: "Conference Date",
@@ -393,7 +384,7 @@ export const site: SiteContent = {
     easychair:
       "https://forms.gle/A4FaMCaCzqGd1J4M8",
     registration:
-      "https://docs.google.com/forms/d/e/1FAIpQLSeYWQgzWXiRwyFgaHzBKmiaGWUe9XTO5TG_eFMfa6i55MQsuA/viewform",
+      "https://forms.gle/A4FaMCaCzqGd1J4M8",
     template: "https://www.ieee.org/conferences/publishing/templates.html",
   },
   seo: {

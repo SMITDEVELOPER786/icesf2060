@@ -77,10 +77,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="dates" className="band band-alt">
-        <div className="page-body">
+      <section id="dates" className="band band-alt" >
+        <div className="page-body" >
           <SectionHeading>Important Dates</SectionHeading>
-          <DateCards dates={site.importantDates} />
+          <DateCards  dates={site.importantDates} />
         </div>
       </section>
 
